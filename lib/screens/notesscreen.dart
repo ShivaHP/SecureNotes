@@ -189,7 +189,10 @@ class _NotesSectionState extends State<NotesSection> {
               ),
             ),
             Expanded(
-              child: ListView.builder(
+              child:noteslist.isEmpty?Container(
+                alignment: Alignment.center,
+                child: Text("Hey,It's Empty here drop a note.",style: textStyle.copyWith(letterSpacing: 0.7,fontSize: 15,fontStyle:FontStyle.italic,fontWeight: FontWeight.bold),),
+              ): ListView.builder(
                   itemCount: noteslist.length,
                   shrinkWrap: true,
                   physics: BouncingScrollPhysics(),
@@ -256,8 +259,7 @@ class _NotesSectionState extends State<NotesSection> {
                                                 ? Icons.star_border_outlined
                                                 : Icons.star,
                                             color:
-                                                noteslist[index].priority ==
-                                                        "0"
+                                                noteslist[index].priority == "0"
                                                     ? Colors.grey
                                                     : Color(0xffF29F05),
                                             size: 20,
