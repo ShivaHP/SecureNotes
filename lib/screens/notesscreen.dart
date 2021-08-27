@@ -199,7 +199,7 @@ class _NotesSectionState extends State<NotesSection> {
                   itemBuilder: (context, index) {
                     return InkWell(
                       onTap: () {
-                        print("");
+                       
                         Navigator.push(
                             context,
                             MaterialPageRoute(
